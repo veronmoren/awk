@@ -1,0 +1,46 @@
+awk '{ if ($1=="xx") print $2 }'
+
+awk '{ if ($4=="current") { print $2 } }' | sort | uniq -c
+
+
+The awk* command is a useful tool for extracting
+and manipulating data from a file. The following 
+examples illustrate different ways "awk" can be used to 
+sum columns of numbers in a file. 
+
+Example #2: Sum the first column of numbers in a file
+Syntax: awk -f sum1.awk < numbers.txt
+Awk file:
+# sum1.awk - 
+{ sum+= $1 }
+END { print sum }
+
+
+Example #2: Sum column 2 of lines containing string "AIX"
+Syntax: awk -f filter_sum.awk < numbers.txt
+Awk file:
+#filter_sum.awk 
+/AIX/ { sum+=$2}
+END { print sum }
+
+
+Example #3: Sum a specific column
+Syntax: awk -f sum2.awk COL=3 < numbers.txt
+Awk file:
+#sum2.awk
+{ sum+=$COL}
+END { print sum }
+
+Example #4: Sum all columns
+Syntax: awk -f sum_all.awk < numbers.txt
+Awk file:
+#sum_all.awk
+{ for (i=1; i<=NF; i++) { sum[i]+= $i } }
+
+END { for (i=1; i<=NF; i++ ) 
+{ print "Col[", i, "] =", sum[i] } 
+}
+
+Pass value into awk
+awk -v "x=$value" 'if (x==2) { print $0 } }' file
+

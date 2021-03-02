@@ -1,19 +1,8 @@
 #!/usr/bin/perl
 
 #%SERVERS = (
-#        'vldbnpsa','dh1fd001',
-#        'vldbnpsb','dh1fd002',
-#        'vldbnpsc','dh1fd003',
-#        'vldbnpsd','dh1fd004',
-#        'dh1fd001','dh1fd001',
-#        'dh1fd002','dh1fd002',
-#        'dh1fd003','dh1fd003',
-#        'dh1fd004','dh1fd004',
-#        'dh1fd005','dh1fd005',
-#        'dh1fd006','dh1fd006',
-#        'dh1fd007','dh1fd007',
-#        'dh1fd008','dh1fd008',
-#        'dh1fd009','dh1fd009',
+#        'vldbone','dh11',
+#        'vldtwo','dh12',
 #);
 
 $first_tps++;

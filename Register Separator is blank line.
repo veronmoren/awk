@@ -1,0 +1,2 @@
+Register Separator is blank line. 
+awk ' BEGIN {RS = ""} {print $0"\nDIVISION "}' perfdata-slate-prd-73-02-sar-2022-06-28-0952.txt | more

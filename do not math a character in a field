@@ -1,0 +1,9 @@
+#!/bin/ksh
+
+for i in $(ps -e -o "user,start" | egrep -v "noboby |enoadm |root |nagios |loadl |daemon |USER " |  awk '!(match($2,/:/)) {print $1}' | sort | uniq )
+do
+      echo "\n"
+      lsuser -a gecos  $i
+      ps -e -o "user,start,pid,ppid,pcpu,vsz,comm,args" | head -n1
+      ps -e -o "user,start,pid,ppid,pcpu,vsz,comm,args" | awk '!(match($2,/:/))  {print $0}' | grep $i
+done
